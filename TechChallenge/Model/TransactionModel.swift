@@ -40,6 +40,9 @@ struct TransactionModel {
     let date: Date
     let accountName: String
     let provider: Provider?
+    //For pin/unpin categoies
+    var pinned = true
+
 }
 
 extension TransactionModel: Identifiable {}

@@ -12,6 +12,8 @@ class TransactionViewModel: ObservableObject {
     
     @Published var transcationFilter: TransactionModel.Category?
     @Published var transactions: [TransactionModel] = ModelData.sampleTransactions
+    
+    var pinnedTransaction: [Int] = ModelData.sampleTransactions.map({ $0.id })
 
     func transcationFilter(category: TransactionModel.Category?) {
         guard category != .none else {
@@ -25,6 +27,20 @@ class TransactionViewModel: ObservableObject {
     
     func getSumFiltered() -> Double {
         transactions
-            .reduce(0, { $0 + $1.amount })
+            .filter{ isPinned($0) }
+            .reduce(0.0, { $0 + $1.amount })
+    }
+    
+    func isPinned(_ transaction: TransactionModel) -> Bool {
+        pinnedTransaction.contains(where: { $0 == transaction.id })
+    }
+
+    func togglePin(_ transaction: TransactionModel) -> Bool {
+        if isPinned(transaction) {
+            pinnedTransaction.removeAll(where: {$0 == transaction.id})
+        } else {
+            pinnedTransaction.append(transaction.id)
+        }
+        return !transaction.pinned
     }
 }

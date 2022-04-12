@@ -16,6 +16,9 @@ struct TransactionListView: View {
             List {
                 ForEach($viewModel.transactions) { $transaction in
                     TransactionView(transaction: transaction, viewModel: viewModel)
+                        .onTapGesture {
+                            transaction.pinned = viewModel.togglePin(transaction)
+                        }
                 }
             }
             .animation(.easeIn)
