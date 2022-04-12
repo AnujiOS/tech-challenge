@@ -22,4 +22,9 @@ class TransactionViewModel: ObservableObject {
         transactions = ModelData.sampleTransactions.filter({ $0.category == category })
         transcationFilter = category
     }
+    
+    func getSumFiltered() -> Double {
+        transactions
+            .reduce(0, { $0 + $1.amount })
+    }
 }

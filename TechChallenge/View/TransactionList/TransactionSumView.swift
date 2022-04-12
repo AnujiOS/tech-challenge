@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct TransactionSumView: View {
+    @ObservedObject var viewModel: TransactionViewModel
+    
+    let noFilter: String = "all"
+
     var body: some View {
         VStack {
             HStack {
@@ -19,12 +23,12 @@ struct TransactionSumView: View {
                 }
                 Spacer()
                 VStack (alignment: .trailing, spacing: 5) {
-                    Text(TransactionModel.Category.food.rawValue)
+                    Text(viewModel.transcationFilter?.rawValue ?? noFilter)
                         .padding(.trailing, 15)
                         .font(.headline)
-                        .foregroundColor(.white)
+                        .foregroundColor(viewModel.transcationFilter?.color ?? .black)
                     
-                    Text("$\(22222, specifier: "%.2f")")
+                    Text("$\(viewModel.getSumFiltered(), specifier: "%.2f")")
                         .bold()
                         .secondary()
                         .padding(.trailing, 15)
@@ -43,6 +47,6 @@ struct TransactionSumView: View {
 
 struct TransactionSumView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionSumView()
+        TransactionSumView(viewModel: TransactionViewModel())
     }
 }

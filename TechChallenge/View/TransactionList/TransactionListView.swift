@@ -23,7 +23,7 @@ struct TransactionListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Transactions")
             
-            TransactionSumView()
+            TransactionSumView(viewModel: viewModel)
         }
     }
 }
