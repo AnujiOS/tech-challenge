@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct TechChallengeApp: App {
+    
+    let viewModel = TransactionViewModel()
 
     var body: some Scene {
         WindowGroup {
             TabView {
                 NavigationView {
-                    TransactionListView()
+                    TransactionListView(viewModel: viewModel)
                 }
                 .tabItem {
                     Label("Transactions", systemImage: "list.bullet")

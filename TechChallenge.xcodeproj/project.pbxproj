@@ -27,6 +27,7 @@
 		3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C626B2E41E00B3D085 /* InsightsView.swift */; };
 		4D7D1C7F2805F82800B7411F /* TransactionFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D1C7E2805F82800B7411F /* TransactionFilterView.swift */; };
 		4D7D1C812805FB1A00B7411F /* TransactionSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D1C802805FB1A00B7411F /* TransactionSumView.swift */; };
+		4D7D1C852805FE9800B7411F /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D1C842805FE9800B7411F /* TransactionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		3CE226C626B2E41E00B3D085 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		4D7D1C7E2805F82800B7411F /* TransactionFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterView.swift; sourceTree = "<group>"; };
 		4D7D1C802805FB1A00B7411F /* TransactionSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSumView.swift; sourceTree = "<group>"; };
+		4D7D1C842805FE9800B7411F /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				3C3FCAAE26C57C650092AB11 /* README.md */,
-				3CE226C926B2E43000B3D085 /* View */,
 				3CE226CA26B2E43B00B3D085 /* Model */,
+				3CE226C926B2E43000B3D085 /* View */,
+				4D7D1C832805FDEC00B7411F /* ViewModel */,
 				3CE2268726B007D300B3D085 /* Assets.xcassets */,
 				3CE2268C26B007D300B3D085 /* Info.plist */,
 				3CE2268926B007D300B3D085 /* Preview Content */,
@@ -192,6 +195,14 @@
 				3C296ED026B404A5006DF667 /* Path.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D7D1C832805FDEC00B7411F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4D7D1C842805FE9800B7411F /* TransactionViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				4D7D1C812805FB1A00B7411F /* TransactionSumView.swift in Sources */,
 				4D7D1C7F2805F82800B7411F /* TransactionFilterView.swift in Sources */,
 				3CE226B526B0523C00B3D085 /* TransactionListView.swift in Sources */,
+				4D7D1C852805FE9800B7411F /* TransactionViewModel.swift in Sources */,
 				3CE226B126B03DC600B3D085 /* ModelData.swift in Sources */,
 				3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */,
 				3C296ED126B404A5006DF667 /* Path.swift in Sources */,

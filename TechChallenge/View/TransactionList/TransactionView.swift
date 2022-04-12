@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TransactionView: View {
     let transaction: TransactionModel
+    let viewModel: TransactionViewModel
     
     var body: some View {
         VStack {
@@ -56,8 +57,7 @@ struct TransactionView: View {
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            TransactionView(transaction: ModelData.sampleTransactions[0])
-            TransactionView(transaction: ModelData.sampleTransactions[1])
+            TransactionView(transaction: ModelData.sampleTransactions[0], viewModel: TransactionViewModel())
         }
         .padding()
         .previewLayout(.sizeThatFits)

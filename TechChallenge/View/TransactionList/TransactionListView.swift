@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    let transactions: [TransactionModel] = ModelData.sampleTransactions
+    @ObservedObject var viewModel: TransactionViewModel
     
     var body: some View {
-        List {
-            ForEach(transactions) { transaction in
-                TransactionView(transaction: transaction)
+        VStack{
+            TransactionFilterView(viewModel: viewModel)
+            List {
+                ForEach($viewModel.transactions) { $transaction in
+                    TransactionView(transaction: transaction, viewModel: viewModel)
+                }
             }
+            .animation(.easeIn)
+            .listStyle(PlainListStyle())
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Transactions")
+            
+            TransactionSumView()
         }
-        .animation(.easeIn)
-        .listStyle(PlainListStyle())
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Transactions")
     }
 }
 
 #if DEBUG
 struct TransactionListView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionListView()
+        TransactionListView(viewModel: TransactionViewModel())
     }
 }
 #endif

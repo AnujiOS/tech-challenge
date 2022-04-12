@@ -17,7 +17,6 @@ struct TransactionSumView: View {
                         .secondary()
                         .padding()
                 }
-                
                 Spacer()
                 VStack (alignment: .trailing, spacing: 5) {
                     Text(TransactionModel.Category.food.rawValue)
@@ -30,7 +29,6 @@ struct TransactionSumView: View {
                         .secondary()
                         .padding(.trailing, 15)
                 }
-                
             }
             .frame(maxWidth: .infinity, maxHeight: 70)
             .background(Color.white)
